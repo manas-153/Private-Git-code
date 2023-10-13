@@ -1,0 +1,106 @@
+
+<div class="create_PCPA_body">
+
+  <div class="left_side_bar_options flex_item">
+
+    <form action="">
+
+      <div class="form-group">
+        <label for="Partno">Part No</label>
+        <input type="text" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label for="Partno">Part Name</label>
+        <input type="text" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label for="Partno">Vendor Name</label>
+        <input type="text" placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label for="Partno">Vendor Code</label>
+        <input type="text" placeholder="">
+      </div>
+
+    </form>
+
+  </div>
+
+  <div class="pcpa_table_body flex_item">
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="Sr.No">
+        <th mat-header-cell *matHeaderCellDef> Sr.No </th>
+        <td mat-cell *matCellDef="let element"> {{element.Srno}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="SupplierName">
+        <th mat-header-cell *matHeaderCellDef> Supplier Name</th>
+        <td mat-cell *matCellDef="let element"> {{element.SupplierName}} </td>
+      </ng-container>
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="SupplierCode">
+        <th mat-header-cell *matHeaderCellDef> Supplier Code </th>
+        <td mat-cell *matCellDef="let element"> {{element.SupplierCode}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="PartNo">
+        <th mat-header-cell *matHeaderCellDef> Part No </th>
+        <td mat-cell *matCellDef="let element"> {{element.Part_no}} </td>
+      </ng-container>
+
+      
+      <ng-container matColumnDef="PartName">
+        <th mat-header-cell *matHeaderCellDef> Part Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.Part_Name}} </td>
+      </ng-container>
+
+
+    
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="CommodityName">
+        <th mat-header-cell *matHeaderCellDef> Commodity Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.Commodity_Name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="SelectAuditDate">
+        <th mat-header-cell *matHeaderCellDef> Select Audit Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.SelectAuditDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="Frequency">
+        <th mat-header-cell *matHeaderCellDef> Frequency </th>
+        <td mat-cell *matCellDef="let element"> {{element.Frequency}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="AuditorName">
+        <th mat-header-cell *matHeaderCellDef> Auditor Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.Auditorname}} </td>
+      </ng-container>
+
+      
+      <ng-container matColumnDef="Submit">
+        <th mat-header-cell *matHeaderCellDef> Submit </th>
+        <td mat-cell *matCellDef="let element"> </td>
+  
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </div>
+    
+
+      
+</div>

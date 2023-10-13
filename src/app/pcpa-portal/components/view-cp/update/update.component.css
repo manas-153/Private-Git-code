@@ -1,0 +1,191 @@
+
+*
+{
+  box-sizing: border-box;
+}
+
+
+.top_side_bar_options
+{
+    width: 100%;
+    margin:18px 0px 28px 0px;
+    display: flex;
+    flex-direction: column;
+    /* background-color: yellow; */
+    align-items: flex-end;
+    padding: 5px 0px;
+   
+    
+}
+
+form
+{
+  width: 100%;
+}
+.flex_box
+{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+
+
+}
+
+
+.form-group
+{
+ 
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 19px;
+  margin-right: 18px;
+
+}
+
+form label
+{
+  display: inline-block;
+    white-space: nowrap;
+    margin-right: 10px;
+
+}
+
+
+.form-group input
+{
+  padding: 10px 5px;
+  transition: all 0.3s;
+  width: 107px;
+  outline-color: #7fbf7f;
+    
+}
+
+
+
+.mat-mat-icon
+{
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  background-color: #00a04a;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 13%;
+  padding: 0px 4px;
+
+}
+
+
+
+.table_body table
+{
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid black;
+   
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  table tr
+  {
+    height: 40px;
+  }
+
+  table tr:nth-child(even)
+  {
+    background-color: #b6f1cc;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .header_row
+  {
+    background-color: #1e1e1e !important;
+ 
+    color: white;
+  }
+
+  .header_row .header_cell
+  {
+    padding: 30px 10px;
+    font-weight: 500 !important;
+    line-height: 25px;
+    text-wrap: wrap;
+    border: 1px solid white;
+  }
+
+  td
+  {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 8px 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .submit_btn
+  {
+    font-size: 12px;
+    padding: 5px;
+    height: 35px;
+  }
+
+  .visiblity
+  {
+    cursor: pointer;
+  }
+
+  .custom-tooltip {
+    background-color: #007bff; /* Tooltip background color */
+    color: white; 
+    border-radius: 4px; /* Tooltip border radius */
+    padding: 8px; /* Tooltip padding */
+  }
+
+
+  .no-data-image-container
+  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .no-data-image-container img
+  {
+    width: 600px;
+  }
+
+  .no-data-image-container p{
+    color: black;
+    padding: 5px;
+    margin: 0;
+    margin-top: 6px;
+    font-size: 25px;
+    line-height: 35px;
+    font-weight: 400;
+  }
+
+  
+  .no-data-image-container span
+  {
+    font-size: 14px;
+    color: #b1aeae;
+  }
+
+
+
+
+
+ 

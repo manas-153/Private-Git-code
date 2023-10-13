@@ -1,0 +1,113 @@
+
+<div *ngIf="dataSource.length else NOData">
+
+  <div class="top_side_bar_options flex_item">
+
+    <form action="">
+  
+  
+      <div class="flex_box">
+  
+  
+          <div class="form-group">
+            <label for="">Part No</label>
+            <input type="text" placeholder="Part No">
+            <mat-icon class="mat-mat-icon">build</mat-icon>
+          </div>
+  
+          <div class="form-group">
+            <label for="">Part Name</label>
+            <input type="text" placeholder="Part Name">
+            <mat-icon class="mat-mat-icon">gavel</mat-icon>
+          </div>
+  
+          <div class="form-group">
+            <label for="">Vendor Code</label>
+            <input type="text" placeholder="Vendor Code">
+            <mat-icon class="mat-mat-icon"> phonelink_lock</mat-icon>
+          </div>
+  
+          <div class="form-group">
+            <label for="">Vendor Name</label>
+            <input type="text" placeholder="Vendor Name">
+            <mat-icon class="mat-mat-icon">perm_identity</mat-icon>
+          </div>
+  
+          <div class="form-group">
+            <label for="">From</label>
+            <input type="text" placeholder="Vendor Name">
+            <mat-icon class="mat-mat-icon">perm_phone_msg</mat-icon>
+          </div>
+  
+          <div class="form-group">
+            <label for="">To</label>
+            <input type="text" placeholder="Vendor Name">
+            <mat-icon class="mat-mat-icon"> comment</mat-icon>
+  
+          </div>
+  
+    </div>
+  
+    </form>
+  
+    <div>
+  
+      <button (click)="exportToExcel()" mat-raised-button color="primary">Export to Excel</button>
+  
+    </div>
+  
+  
+  </div>
+  
+      <div class="table_body">
+          
+        <table #myTable class="mat-elevation-z8">
+          <tr class="header_row">
+            <th class="header_cell" *ngFor="let column of displayedColumns">{{column}}</th>
+          </tr>
+  
+          <tr *ngFor="let data of dataSource ;let i=index">
+            <td>{{data.id}}</td>
+            <td>{{data.supplier_Name}}</td>
+            <td>{{data.supplier_Code}}</td>
+            <td>{{data.part_Number}}</td>
+            <td>{{data.part_Name}}</td>
+            <td>{{data.commodity}}</td>
+            <td>{{data.cpOriginalDate | date:'MM/dd/yyyy'}}</td>
+            <td>{{data.cpRevisionDate | date:'MM/dd/yyyy'}}</td>
+            <td>{{data.revision_Number}}</td>
+            <td><mat-icon (click)="openDialog(data)" matTooltip="View older History" matTooltipClass="custom-tooltip" matSuffix class="visiblity">{{Opened ? 'visibility_off' : 'visibility'}}</mat-icon>
+           
+            <td>  <button mat-raised-button class="submit_btn" color="primary">Submit</button></td>    
+      </tr>
+  
+     
+        
+        </table>
+      </div>
+
+</div>
+
+
+<ng-template #NOData> 
+
+  <div class="no-data-image-container">
+
+    <img src="assets/No data-found.svg" alt="">
+    <p>Sorry !! No Data Found</p>
+    <span>Please try after some time</span>
+
+  </div>
+
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+

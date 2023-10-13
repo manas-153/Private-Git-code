@@ -1,0 +1,114 @@
+
+<div *ngIf="FilteredData.length else NOData">
+
+<div class="top_side_bar_options flex_item" >
+
+  <form action="" [formGroup]="filterInputs">
+
+
+    <div class="flex_box">
+
+
+      <div class="form-group">
+        <label for="PartNo">Part No</label>
+        <input type="text" placeholder="Part No" formControlName="PartNo" (keyup)="filterData()">
+        <mat-icon class="mat-mat-icon">build</mat-icon>
+      </div>
+      
+      <div class="form-group">
+        <label for="PartName">Part Name</label>
+        <input type="text" placeholder="Part Name" formControlName="PartName" (keyup)="filterData()">
+        <mat-icon class="mat-mat-icon">gavel</mat-icon>
+      </div>
+      
+      <div class="form-group">
+        <label for="VendorCode">Vendor Code</label>
+        <input type="text" placeholder="Vendor Code" formControlName="VendorCode" (keyup)="filterData()">
+        <mat-icon class="mat-mat-icon">phonelink_lock</mat-icon>
+      </div>
+      
+      <div class="form-group">
+        <label for="VendorName">Vendor Name</label>
+        <input type="text" placeholder="Vendor Name" formControlName="VendorName" (keyup)="filterData()">
+        <mat-icon class="mat-mat-icon">perm_identity</mat-icon>
+      </div>
+      
+
+  
+
+   
+
+  </div>
+
+  </form>
+
+  <div>
+
+    <button (click)="exportToExcel()" mat-raised-button color="primary">Export to Excel</button>
+
+  </div>
+
+</div>
+
+    <div class="table_body">
+        
+      <table #myTable class="mat-elevation-z8">
+        <tr class="header_row">
+          <th class="header_cell" *ngFor="let column of displayedColumns">{{column}}</th>
+        </tr>
+        <tbody>
+        <tr *ngFor="let data of FilteredData ;let i=index">
+          <td>{{data.id}}</td>
+          <td>{{data.supplier_Name}}</td>
+          <td>{{data.supplier_Code}}</td>
+          <td>{{data.part_Number}}</td>
+          <td>{{data.part_Name}}</td>
+          <td>{{data.commodity}}</td>
+          <td>{{data.cpOriginalDate | date:'MM/dd/yyyy'}}</td>
+          <td>{{(data.revision_Number!=null && data.revision_Number > 0) ? (data.cpRevisionDate | date:'MM/dd/yyyy') : '' }}</td>
+          <td>{{(data.revision_Number!=null && data.revision_Number > 0) ? data.revision_Number : 'NA' }}</td>
+          <td><mat-icon (click)="openDialog(data)" matTooltip="View older History" matTooltipClass="custom-tooltip" matSuffix class="visiblity">{{Opened ? 'visibility_off' : 'visibility'}}</mat-icon>
+         
+          <td>  <button mat-raised-button class="submit_btn" color="primary">Submit</button></td>    
+    </tr>
+
+  <tbody>
+
+   
+        
+
+   
+
+   
+
+        
+
+       
+      
+    
+
+      
+      </table>
+    </div>
+
+  </div>
+
+  <ng-template #NOData> 
+
+    <div class="no-data-image-container">
+
+      <img src="assets/No data-found.svg" alt="">
+      <p>Sorry !! No Data Found</p>
+      <span>Please try after some time</span>
+
+    </div>
+
+  </ng-template>
+
+
+
+
+
+
+
+

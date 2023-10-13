@@ -1,0 +1,93 @@
+<div class="dialogue_body">
+
+<mat-dialog-content class="mat-dialogue_box">
+
+
+  <div class="header-info">
+    <h2 mat-dialog-title>All Revision History</h2>
+
+
+    <mat-chip-listbox *ngIf="dataSource.length" aria-label="Dog selection">
+
+
+      <mat-chip  class="mat-chip supplier_Name" color="primary">
+
+
+      <strong>Supplier Name :</strong> 
+       {{data.Supplier_Name}}
+      </mat-chip>
+
+      <mat-chip  class="mat-chip part_Name">
+        <strong>Part Name :</strong>
+        {{data.Part_Name}}
+      </mat-chip>
+    </mat-chip-listbox>
+  </div>
+ 
+
+  <div *ngIf="dataSource.length===0 else ShowData">
+
+    <div class="noDataFound">
+
+      <img src="assets/Extract.jpg" alt="">
+
+      <p>Uh! No Data Found</p>
+      <span>Please try again after some time</span>
+
+    </div>
+
+  </div>
+
+
+  <ng-template #ShowData >
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="Id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element let i=index"> {{element.id}} </td>
+      </ng-container>
+    
+    
+      <!-- Weight Column -->
+      <ng-container matColumnDef="CPRevisonDate">
+        <th mat-header-cell *matHeaderCellDef> CP Revison Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.cpRevisionDate | date:'MM/dd/yyyy'}} </td>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="Revison_Number">
+        <th mat-header-cell *matHeaderCellDef> Revison Number </th>
+        <td mat-cell *matCellDef="let element"> {{element.revision_Number}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="Revison_History">
+        <th mat-header-cell *matHeaderCellDef> Revison History </th>
+        <td mat-cell *matCellDef="let element" class="revision_History_cell"> {{element.revision_History}} 
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+  </ng-template>
+
+ 
+</mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+
+</div>
+
+
+
+
+
+    

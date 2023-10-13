@@ -1,0 +1,242 @@
+<div class="pcpa_plan_body">
+
+      <div class="tables">
+
+        <div class="months_plan_table">
+    
+    
+            <table>
+                <tr class="header_row">
+                    <th class="table_head_cell">P/A</th>
+                     <th class="table_head_cell" *ngFor="let month of twlveMonth">{{month}}</th>
+                     <th class="table_head_cell">Total</th>
+                </tr>
+    
+                <!-- Plan  -->
+                <tr style="background-color: #b6f1cc; color: black;">
+                  
+                  <th >
+                    <div class="heading_col">
+
+                      Plan
+
+                      <mat-icon color="primary">event</mat-icon>
+
+
+                    </div>
+                    
+                   </th>
+                  <td *ngFor="let data of Plan">
+                
+                  </td>
+    
+                  <td></td>
+    
+                </tr>
+    
+                <!-- Actual  -->
+    
+                <tr>
+                  
+                    <th >
+                      <div class="heading_col">
+
+                        Actual
+
+                        <mat-icon>event_available</mat-icon>
+
+                      </div>
+
+                      </th>
+                    <td *ngFor="let data of Actual">
+                  
+                    </td>
+    
+                    <td></td>
+      
+                  </tr>
+    
+                  
+                  <!-- Plan Pending  -->
+                <tr style="background-color: #fff700; color:black;">
+                  
+                    <th >
+                      <div class="heading_col"> 
+
+                        Plan Pending  <mat-icon>history</mat-icon>
+
+                      </div>
+                      </th>
+                  
+    
+                    <td *ngFor="let data of Plan_Pending">
+                  
+                    </td>
+    
+                    <td></td>
+      
+                  </tr>
+    
+    
+    
+            </table>
+        </div>
+
+         <div class="fliter_inputs flex_item">
+
+          <mat-divider></mat-divider>
+
+        <form action="">
+    
+          <div class="form-group">
+
+            <label for="Partno">Filter By</label>
+
+
+            <div class="Input_field_group ss">
+
+              <div class="mat-icon_box">
+                <mat-icon>filter</mat-icon>
+              </div>
+
+              <mat-form-field appearance="outline">
+                <mat-label>FilterBy</mat-label>
+                <mat-select [formControl]="toppings" multiple>
+                  <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+
+             
+
+            </div>
+
+      
+          </div>
+    
+          <div class="form-group">
+
+            <label for="Partno">Vendor Name</label>
+
+             <div class="Input_field_group">
+
+              <div class="mat-icon_box">
+                <mat-icon>filter</mat-icon>
+              </div>
+
+              <input type="text" placeholder="Vendor Name">
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label for="Partno">Part No</label>
+            <div class="Input_field_group">
+                   
+              <div class="mat-icon_box">
+                <mat-icon>filter</mat-icon>
+              </div>
+
+              <input type="text" placeholder="Part No">
+            </div>
+          </div>
+    
+          <div class="form-group">
+            <label for="Partno">From</label>
+            <div class="Input_field_group">
+              <input type="text" placeholder="From">
+            </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="Partno">To</label>
+            <div class="Input_field_group">
+              <input type="text" placeholder="To">
+            </div>
+          </div>
+
+          <button mat-raised-button color="primary"> 	<mat-icon>filter_list</mat-icon> Apply Filter</button>
+    
+    
+        </form>
+
+        <mat-divider></mat-divider>
+    
+      </div>
+
+     
+    
+        <div class="pcpa_plan_table_body ">
+    
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        
+              <!--- Note that these columns can be defined in any order.
+                    The actual rendered columns are set as a property on the row definition" -->
+            
+              <!-- Position Column -->
+              <ng-container matColumnDef="Sr_No">
+                <th mat-header-cell *matHeaderCellDef>S.No</th>
+                <td mat-cell *matCellDef="let element"> {{element.Sr_No}} </td>
+              </ng-container>
+            
+              <!-- Name Column -->
+              <ng-container matColumnDef="SupplierName">
+                <th mat-header-cell *matHeaderCellDef>Supplier Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.SupplierName}} </td>
+              </ng-container>
+            
+              <!-- Weight Column -->
+              <ng-container matColumnDef="SupplierCode">
+                <th mat-header-cell *matHeaderCellDef>Supplier Code</th>
+                <td mat-cell *matCellDef="let element"> {{element.SupplierCode}} </td>
+              </ng-container>
+        
+              <ng-container matColumnDef="PartNo">
+                <th mat-header-cell *matHeaderCellDef> Part No </th>
+                <td mat-cell *matCellDef="let element"> {{element.PartNo}} </td>
+              </ng-container>
+        
+              
+              <ng-container matColumnDef="CommodityName">
+                <th mat-header-cell *matHeaderCellDef> Commodity Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.CommodityName}} </td>
+              </ng-container>
+        
+        
+            
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="AuditPlanDate">
+                <th mat-header-cell *matHeaderCellDef> Audit Plan Date</th>
+                <td mat-cell *matCellDef="let element"> {{element.AuditPlanDate}} </td>
+              </ng-container>
+        
+              <ng-container matColumnDef="AuditorName">
+                <th mat-header-cell *matHeaderCellDef> Auditor Name</th>
+                <td mat-cell *matCellDef="let element"> {{element.AuditorName}} </td>
+              </ng-container>
+        
+              <ng-container matColumnDef="AuditDoneDate">
+                <th mat-header-cell *matHeaderCellDef> Audit Done Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.AuditDoneDate}} </td>
+              </ng-container>
+        
+              <ng-container matColumnDef="Ageing">
+                <th mat-header-cell *matHeaderCellDef> Ageing</th>
+                <td mat-cell *matCellDef="let element"> {{element.Ageing}} </td>
+              </ng-container>
+        
+              
+              <!-- <ng-container matColumnDef="Submit">
+                <th mat-header-cell *matHeaderCellDef> Submit </th>
+                <td mat-cell *matCellDef="let element"> </td>
+          
+              </ng-container> -->
+            
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        
+          </div>
+    
+        </div>
+
+</div>

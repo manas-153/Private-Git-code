@@ -1,0 +1,91 @@
+*{
+  box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    box-shadow: none;
+  }
+
+  table tr:nth-child(odd)
+  {
+    background-color: #b6f1cc;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .mat-mdc-header-row
+  {
+    background: none !important;
+  }
+
+ 
+  table, th,td{
+    text-align: center;
+   
+  }
+
+  .revision_History_cell
+  {
+      min-width: 280px !important;
+    max-width: 360px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  }
+
+  .mat-dialogue_box
+  {
+    max-height: 68vh !important;
+    max-width: 800px;
+  }
+
+  h2
+  {
+    margin-bottom: 10px;
+    padding: 0;
+  }
+
+  .header-info
+  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .part_number
+  {
+    box-shadow: none;
+  }
+
+  .mat-chip
+  {
+    background-color:#b6f1cc !important;
+  }
+
+  .noDataFound
+  {
+    display: flex;
+    flex-direction: column;
+     align-items: center;
+  }
+
+  .noDataFound p{
+    color: black;
+    padding: 5px;
+    margin: 0;
+    font-size: 19px;
+  }
+
+  .noDataFound span
+  {
+    font-size: 14px;
+  }
+  .noDataFound img
+  {
+    width: 400px;
+    height: 336px;
+
+  }
+
+

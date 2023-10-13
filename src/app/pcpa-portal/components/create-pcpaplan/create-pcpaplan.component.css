@@ -1,0 +1,98 @@
+*
+{
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+     border: 1px solid black;
+     border-collapse: collapse;
+     margin-bottom: 25px;
+    box-shadow: none;
+  }
+
+
+  table tr:nth-child(even)
+  {
+    background-color: #b6f1cc;
+    border-bottom: 1px solid #dddddd;
+  }
+
+  .mat-mdc-header-row
+  {
+    background-color: #1e1e1e !important;
+    color: white;
+  }
+
+  table .mat-mdc-header-cell 
+  {
+    padding: 30px 10px;
+    font-weight: 500 !important;
+    line-height: 25px;
+    text-wrap: wrap;
+    border: 1px solid white;
+  }
+
+.create_PCPA_body
+{
+    width: 100%;
+    padding: 0px 20px;
+    margin: 25px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.mat-mdc-row .mat-mdc-cell {
+     border: 1px solid black;
+    cursor: pointer;
+    text-align: center;
+  }
+
+ 
+  .mat-mdc-row
+  {
+    height: 33px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+ .mat-mdc-header-cell
+{
+    border-right: 1px solid black;
+    text-align: center;
+ 
+} 
+
+.left_side_bar_options
+{
+    width: 15%;
+}
+
+.pcpa_table_body
+{
+    width: 82%;
+}
+
+.form-group
+{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px 5px 5px;
+    margin-bottom: 10px;
+    /* background-color: blue; */
+}
+
+.form-group label
+{
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.form-group input
+{
+    padding: 5px;
+    width: 80%;
+}

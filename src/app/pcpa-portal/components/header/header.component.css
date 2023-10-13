@@ -1,0 +1,102 @@
+*
+{
+    box-sizing: border-box;
+}
+
+.Portal-header
+{
+    width: 100%;
+    padding: 16px 20px;
+    /* background-color: blue; */
+    display: flex;
+    justify-content: space-between;
+ 
+}
+
+.Portal-name
+{    width: 87%;
+    text-align: center;
+    /* background-color: green; */
+    margin: 10px 0px;
+
+}
+
+.Portal-name span
+{
+    font-weight: 500;
+    font-size: 28px;
+    text-decoration: underline;
+    text-decoration-skip:ink;
+    text-decoration-thickness: 1px;
+}
+
+.swaraj-logo
+{
+    width: 12%;
+    /* background-color: red; */
+} 
+
+.swaraj-logo img
+{
+    width: 100%;
+    height: 100%;
+}
+
+.common_toolbar
+{
+    padding: 0;
+    height: auto;
+    background-color: #d7d7d7;
+    display: inline-block !important;
+    width: auto;
+   
+}
+
+.mat-options
+{
+    width: 100%;
+}
+
+.mat-options ul 
+{
+   
+    height: 100%;
+    padding: 0;
+     margin: 0;
+}
+
+
+.mat-options ul li
+{
+    display: inline-block;
+    height: 100%;
+    padding: 0px 8px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.mat-options ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+
+}
+
+.mat-options ul li:hover
+{
+    background-color: #ababab;
+}
+
+.mat-options ul .active
+{
+    background-color: #ababab;
+}
+
+
+
+.mat-item:hover
+{
+  background-color: #80b4d9 !important;
+}
+
+

@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Swaraj_Login_Page_with_encryption';
+
+  constructor(){
+  }
 }

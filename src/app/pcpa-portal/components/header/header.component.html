@@ -1,0 +1,38 @@
+<div class="Portal-header">
+
+    <div class="Portal-name">
+        <span>PCPA Portal  </span> 
+
+    </div>
+
+    <div class="swaraj-logo">
+        <img src="assets/swaraj final logo.jpg" alt="">
+    </div>
+
+</div>
+
+<mat-toolbar class="common_toolbar">
+
+   <div class="mat-options">
+
+       <ul>
+
+        <li [ngClass]="{'active': item.active}" *ngFor="let item of mat_options let ind=index" (click)="changeHighlight(ind)"> 
+            
+            <a *ngIf="item.label!='View Cp'" routerLink='/{{item.label}}'>{{item.label}}</a>
+
+
+            <a *ngIf="item.label==='View Cp'" mat-button  [matMenuTriggerFor]="menu" class="dropdown" (mouseenter)="toggleDropdown(true)" (mouseleave)="toggleDropdown(false)"> View Cp
+        
+                <mat-menu #menu="matMenu" backdropClass="customize">
+                  <button class="mat-item" routerLink='/ViewCp/final' mat-menu-item>Final</button>
+                  <button class="mat-item" routerLink='/ViewCp/update' mat-menu-item>Update</button>
+            
+                </mat-menu>
+            </a>
+             
+        </li>
+   
+       </ul>
+   </div>
+  </mat-toolbar>

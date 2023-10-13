@@ -1,0 +1,19 @@
+*
+{
+    box-sizing: border-box;
+}
+
+.view_body
+{
+   padding: 15px 50px;
+}
+
+
+
+@media only screen  and (max-width:800px) {
+    .view_body
+    {
+      padding: 10px;
+      width: 100%;
+    }
+  }
